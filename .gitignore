@@ -54,8 +54,14 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# Ignore Yarn lock file in favour of package-lock.json
+yarn.lock
+
 # dotenv environment variables file
 .env
 
 # sfdx local configuration
 .sfdx
+
+# oclif cli manifest file
+.oclif.manifest.json
