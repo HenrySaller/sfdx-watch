@@ -1,4 +1,4 @@
-> Salesforce DX development automation toolkit.
+Salesforce DX development automation toolkit.
 
 ## What is sfdx-watch?
 
@@ -22,7 +22,7 @@ Install `sfdx` plugin using `plugin:install`:
 $ sfdx plugins:install sfdx-watch
 ```
 
-> Choose **yes** when prompted to *'Continue installation?'*.
+Choose **yes** when prompted to *'Continue installation?'*.
 
 Launch the `watch` command from `sfdx`.
 
