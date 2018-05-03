@@ -22,7 +22,7 @@ Install `sfdx` plugin using `plugin:install`:
 $ sfdx plugins:install sfdx-watch
 ```
 
-> Choose **yes** after *'Continue installation y/n?'* message.
+> Choose **yes** when prompted to *'Continue installation?'*.
 
 Launch the `watch` command from `sfdx`.
 

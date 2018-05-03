@@ -3,8 +3,7 @@ const { watch } = require('./../');
 
 class WatchCommand extends Command {
   async run() {
-    const logEnabled = true;
-    watch(logEnabled);
+    await watch({ logEnabled: true });
   }
 }
 

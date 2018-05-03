@@ -117,11 +117,15 @@ function deploy(exit) {
   return cp;
 }
 
-function watch(logEnabled) {
-  if (logEnabled) logEvents('watch');
+function watch(config) {
+  return new Promise((resolve, reject) => {
+    if (config.logEnabled) logEvents('watch');
 
-  gulp.watch(getProjectPath('scss'), scss);
-  gulp.watch(getProjectPath('!(scss)'), deploy);
+    gulp.watch(getProjectPath('scss'), scss);
+    gulp.watch(getProjectPath('!(scss)'), deploy);
+
+    gulp.on('error', (env) => reject(formatError(evt)));
+  });
 }
 
 module.exports = { watch };
