@@ -1,6 +1,6 @@
 {
   "name": "sfdx-watch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Salesforce DX development automation toolkit.",
   "license": "GPL-3.0-or-later",
   "person": "Henry Saller <hi@henrysaller.com> (http://henrysaller.com/)",
@@ -9,15 +9,31 @@
   "bugs": "https://github.com/HenrySaller/sfdx-watch/issues",
   "keywords": [
     "sfdx",
-    "watch"
+    "watch",
+    "plugin"
   ],
   "main": "gulpfile.js",
-  "bin": "./cli.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": "./bin/run",
+  "files": [
+    "index.js",
+    "/cli",
+    "oclif.manifest.json"
+  ],
+  "oclif": {
+    "commands": "./cli",
+    "bin": "sfdx-watch"
   },
-  "devDependencies": {
+  "scripts": {
+    "manifest": "node scripts/manifest.js",
+    "prepublish": "npm run manifest"
+  },
+  "dependencies": {
+    "@oclif/command": "^1.4.20",
+    "@oclif/config": "^1.6.17",
+    "@oclif/errors": "^1.0.8",
+    "@oclif/plugin-help": "^1.2.10",
     "ansi-colors": "^1.1.0",
+    "globby": "^8.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-sass": "^4.0.1",
     "gulp-tap": "^1.0.1",
