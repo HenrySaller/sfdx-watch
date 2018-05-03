@@ -16,7 +16,7 @@ There are a few ways of how you can use this package:
 
 #### 1. 'sfdx-cli' plugin
 
-Install `sfdx` plugin using `plugin:install`:
+Install `sfdx` plugin using `plugins:install`
 
 ```console
 $ sfdx plugins:install sfdx-watch
