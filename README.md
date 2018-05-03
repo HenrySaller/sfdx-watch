@@ -30,12 +30,12 @@ Launch the `watch` command from `sfdx`.
 $ sfdx watch
 ```
 
-#### 2. 'npm' dependency
+#### 2. 'npm' global package
 
 First, you need to run npm install:
 
 ```console
-$ npm i sfdx-watch -D
+$ npm i sfdx-watch -g
 ```
 
 Launch the `watch` task from cli and enjoy your automated development.
@@ -57,7 +57,10 @@ $ npm i sfdx-watch -D
 And then:
 
 ```javascript
+const gulp = require('gulp');
 const { watch } = require('sfdx-watch');
+
+gulp.task('default', watch);
 ```
 
 ## Documentation
