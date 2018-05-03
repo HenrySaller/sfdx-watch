@@ -1,6 +1,6 @@
 {
   "name": "sfdx-watch",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Salesforce DX development automation toolkit.",
   "license": "GPL-3.0-or-later",
   "person": "Henry Saller <hi@henrysaller.com> (http://henrysaller.com/)",
