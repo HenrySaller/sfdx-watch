@@ -83,7 +83,7 @@ All the files that you do **NOT** use on the scratch org should be listed in `.f
 
 ### SCSS
 
-Compiles *'.scss'* files to *'.css'* using the same name and within the same folder. This allows you to rename your *'.css'* files to *'.scss'* in the existing components and start writing modular SCSS without any additional changes.
+Compiles *'.scss'* and *'.sass'* files to *'.css'* using the same name and within the same folder. This allows you to rename your *'.css'* files to *'.scss'* in the existing components and start writing modular SCSS without any additional changes.
 
 This logic can be applied to any folder within you 'package'. For example 'static resources' can also benefit from *'.scss'* syntax.
 
@@ -93,8 +93,9 @@ The folder structure and naming are totally up to you. Just remember to update `
 
 ```
 # e.g., ignore every 'scss' directory and all '.scss' files
-**scss
-**.scss
+**scss/
+**/*.scss
+**/*.sass
 ```
 
 In order to use 'tokens' they should be wrapped with `#{}` interpolation syntax.
