@@ -134,9 +134,8 @@ function deploy(exit) {
 
 function watch(config = {}) {
   return new Promise((resolve, reject) => {
+    if (config.logEnabled) logEvents('watch');
     if (config.flags) Config.setFlags(config.flags);
-
-    logEvents('watch');
 
     gulp.watch(getProjectPath('{scss,sass}'), scss);
     gulp.watch(getProjectPath('!(scss|sass)'), deploy);
