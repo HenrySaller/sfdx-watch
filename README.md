@@ -63,6 +63,37 @@ const { watch } = require('sfdx-watch');
 gulp.task('default', watch);
 ```
 
+## Parameters
+
+#### --username
+
+```
+-u, --username (optional)
+```
+
+```console
+$ sfdx watch -u ScratchOrgAlias
+```
+
+*Type: string*
+
+A username or alias for the target org. Use it for rapid switching between scratch orgs.
+
+### Parameters in gulp
+
+```javascript
+const gulp = require('gulp');
+const { watch } = require('sfdx-watch');
+
+const config = {
+  flags: {
+    username: 'ScratchOrgAlias'
+  }
+}
+
+gulp.task('default', () => watch(config));
+```
+
 ## Documentation
 
 This toolkit currently supports the following tasks:
@@ -83,7 +114,7 @@ All the files that you do **NOT** use on the scratch org should be listed in `.f
 
 ### SCSS
 
-Compiles *'.scss'* files to *'.css'* using the same name and within the same folder. This allows you to rename your *'.css'* files to *'.scss'* in the existing components and start writing modular SCSS without any additional changes.
+Compiles *'.scss'* and *'.sass'* files to *'.css'* using the same name and within the same folder. This allows you to rename your *'.css'* files to *'.scss'* in the existing components and start writing modular SCSS without any additional changes.
 
 This logic can be applied to any folder within you 'package'. For example 'static resources' can also benefit from *'.scss'* syntax.
 
@@ -93,8 +124,9 @@ The folder structure and naming are totally up to you. Just remember to update `
 
 ```
 # e.g., ignore every 'scss' directory and all '.scss' files
-**scss
-**.scss
+**scss/
+**/*.scss
+**/*.sass
 ```
 
 In order to use 'tokens' they should be wrapped with `#{}` interpolation syntax.
