@@ -37,12 +37,14 @@ function File(path, project) {
 }
 
 const Config = (() => {
-  const flags = {};
-
   return {
     sfdx: new File('./sfdx-project.json', 'force-app'),
-    setFlags(val) { if (val) this.flags = val; },
-    getFlag(elm) { return this.flags[elm]; }
+    setFlags(val) {
+      if (val && !this.flags) this.flags = val;
+    },
+    getFlag(elm) {
+      if (this.flags) return this.flags[elm];
+    }
   }
 })();
 
@@ -132,8 +134,9 @@ function deploy(exit) {
 
 function watch(config = {}) {
   return new Promise((resolve, reject) => {
-    if (config.logEnabled) logEvents('watch');
     if (config.flags) Config.setFlags(config.flags);
+
+    logEvents('watch');
 
     gulp.watch(getProjectPath('{scss,sass}'), scss);
     gulp.watch(getProjectPath('!(scss|sass)'), deploy);

@@ -63,6 +63,37 @@ const { watch } = require('sfdx-watch');
 gulp.task('default', watch);
 ```
 
+## Parameters
+
+#### --username
+
+```
+-u, --username (optional)
+```
+
+```console
+$ sfdx watch -u ScratchOrgAlias
+```
+
+*Type: string*
+
+A username or alias for the target org. Use it for rapid switching between scratch orgs.
+
+### Parameters in gulp
+
+```javascript
+const gulp = require('gulp');
+const { watch } = require('sfdx-watch');
+
+const config = {
+  flags: {
+    username: 'ScratchOrgAlias'
+  }
+}
+
+gulp.task('default', () => watch(config));
+```
+
 ## Documentation
 
 This toolkit currently supports the following tasks:

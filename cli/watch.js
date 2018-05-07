@@ -4,7 +4,7 @@ const { watch } = require('./../');
 class WatchCommand extends Command {
   async run() {
     const { flags } = this.parse(WatchCommand);
-    await watch({ flags, logEnabled: true });
+    await watch({ flags });
   }
 }
 
