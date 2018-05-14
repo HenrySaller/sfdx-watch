@@ -64,4 +64,4 @@ yarn.lock
 .sfdx
 
 # oclif cli manifest file
-.oclif.manifest.json
+# .oclif.manifest.json

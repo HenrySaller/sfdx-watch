@@ -1,0 +1,1 @@
+{"version":"1.1.3","commands":{"watch":{"id":"watch","description":"watch for changes","pluginName":"sfdx-watch","pluginType":"core","aliases":[],"flags":{"username":{"name":"username","type":"option","char":"u","description":"a username or alias for the target org"}},"args":[]}}}
