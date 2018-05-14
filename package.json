@@ -26,7 +26,7 @@
   },
   "scripts": {
     "manifest": "node scripts/manifest.js",
-    "prepublish": "npm run manifest"
+    "version": "npm run manifest"
   },
   "dependencies": {
     "@oclif/command": "^1.4.20",
@@ -41,6 +41,6 @@
     "pretty-hrtime": "^1.0.3"
   },
   "peerDependencies": {
-    "sfdx-cli": "^6.14.0"
+    "sfdx-cli": "^6.15.0"
   }
 }
