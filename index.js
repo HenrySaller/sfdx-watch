@@ -6,6 +6,7 @@ const { red, cyan, magenta } = require('ansi-colors');
 const prettyTime = require('pretty-hrtime');
 const gulp = require('gulp');
 const { sync:sassSync } = require('gulp-sass');
+const cssnano = require('gulp-cssnano');
 const tap = require('gulp-tap');
 const { spawn } = require('child_process');
 
@@ -98,6 +99,7 @@ function scss() {
       logError('during "scss" compile', err.formatted);
       this.emit('end');
     }))
+    .pipe(cssnano())
     .pipe(tap(file => file.contents = Buffer.concat(
       [
         Buffer.from(
@@ -113,10 +115,11 @@ function deploy(exit) {
   const log = [];
   const params = ['force:source:push'];
   const target = Config.getFlag('username');
+  const cmd = 'sfdx' + (process.platform === 'win32' ? '.cmd' : '');
 
   if (target) params.push(`-u=${target}`);
 
-  const cp = spawn('sfdx', params);
+  const cp = spawn(cmd, params);
 
   cp.stdout.on('data', data => log.push(data));
   cp.stderr.on('data', data => log.push(`Error: ${data}`));
