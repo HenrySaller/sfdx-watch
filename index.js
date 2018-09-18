@@ -99,7 +99,9 @@ function scss() {
       logError('during "scss" compile', err.formatted);
       this.emit('end');
     }))
-    .pipe(cssnano())
+    .pipe(cssnano({
+      zindex: false
+    }))
     .pipe(tap(file => file.contents = Buffer.concat(
       [
         Buffer.from(
