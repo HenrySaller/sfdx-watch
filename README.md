@@ -1,3 +1,9 @@
+## Important! This project is discontinued.
+
+Feel free to fork it and modify to your liking. Please be aware that it is outdated and may not work with the recent SDFX releases.
+
+_____
+
 Salesforce DX development automation toolkit.
 
 ## What is sfdx-watch?
